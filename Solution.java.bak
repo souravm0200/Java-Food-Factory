@@ -1,7 +1,34 @@
 import java.util.*;
 import java.security.*;
+interface Food {
+   public String getType();
+  }
+  class Pizza implements Food {
+   public String getType() {
+   return "Someone ordered a Fast Food!";
+   }
+  }
 
+  class Cake implements Food {
 
+   public String getType() {
+   return "Someone ordered a Dessert!";
+   }
+  }
+  class FoodFactory {
+    public Food getFood(String order) {
+
+if (order.equals("pizza")) {
+    Food pie = new Pizza();
+    return pie;
+} else {
+    Food dessert = new Cake();
+    return dessert;
+}
+
+}//End of getFood method
+
+  }//End of factory class
 
   public class Solution {
 
